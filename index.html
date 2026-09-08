@@ -1,0 +1,646 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday Hiba ❤️</title>
+
+<!-- Beautiful Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Great+Vibes&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(255,255,255,.8), transparent 25%),
+        radial-gradient(circle at 80% 10%, rgba(255,190,210,.35), transparent 30%),
+        linear-gradient(135deg, #fff5f7, #ffe9ef, #fff7f0);
+
+    color: #59343d;
+    font-family: "Quicksand", sans-serif;
+    overflow-x: hidden;
+}
+
+/* --------------------
+   FLOATING BACKGROUND
+-------------------- */
+
+.background-heart {
+    position: fixed;
+    font-size: 18px;
+    opacity: .35;
+    animation: floatHeart 8s linear infinite;
+    pointer-events: none;
+    z-index: 0;
+}
+
+@keyframes floatHeart {
+    0% {
+        transform: translateY(110vh) rotate(0deg);
+        opacity: 0;
+    }
+    15% {
+        opacity: .4;
+    }
+    85% {
+        opacity: .4;
+    }
+    100% {
+        transform: translateY(-10vh) rotate(25deg);
+        opacity: 0;
+    }
+}
+
+/* --------------------
+   MAIN HERO
+-------------------- */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 50px 20px;
+    z-index: 1;
+}
+
+.small-text {
+    font-size: 14px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #b87583;
+    margin-bottom: 10px;
+    animation: fadeDown 1s ease;
+}
+
+h1 {
+    font-family: "Great Vibes", cursive;
+    font-size: clamp(65px, 12vw, 125px);
+    font-weight: 400;
+    margin: 0;
+    color: #8e4d5d;
+    text-align: center;
+    line-height: 1;
+    animation: fadeDown 1.2s ease;
+}
+
+.subtitle {
+    font-family: "DM Serif Display", serif;
+    font-style: italic;
+    font-size: 21px;
+    margin-top: 18px;
+    color: #9f6874;
+    animation: fadeDown 1.5s ease;
+}
+
+/* --------------------
+   BALLOONS
+-------------------- */
+
+.balloon {
+    position: absolute;
+    width: 65px;
+    height: 82px;
+    border-radius: 50% 50% 45% 45%;
+    animation: balloonFloat 4s ease-in-out infinite;
+    opacity: .9;
+}
+
+.balloon::after {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 110px;
+    background: rgba(120,70,80,.35);
+    top: 78px;
+    left: 50%;
+}
+
+.balloon::before {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 8px solid currentColor;
+}
+
+.b1 {
+    left: 8%;
+    top: 15%;
+    background: #f3a7b8;
+    color: #f3a7b8;
+}
+
+.b2 {
+    right: 9%;
+    top: 18%;
+    background: #d8a4bd;
+    color: #d8a4bd;
+    animation-delay: 1s;
+}
+
+.b3 {
+    left: 17%;
+    bottom: 17%;
+    background: #f7c6a5;
+    color: #f7c6a5;
+    animation-delay: 2s;
+}
+
+.b4 {
+    right: 17%;
+    bottom: 15%;
+    background: #e7b5c5;
+    color: #e7b5c5;
+    animation-delay: .5s;
+}
+
+@keyframes balloonFloat {
+    0%,100% {
+        transform: translateY(0) rotate(-3deg);
+    }
+    50% {
+        transform: translateY(-20px) rotate(3deg);
+    }
+}
+
+/* --------------------
+   ENVELOPE AREA
+-------------------- */
+
+.envelope-area {
+    margin-top: 65px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeUp 1.8s ease;
+}
+
+.envelope {
+    width: 280px;
+    height: 185px;
+    position: relative;
+    cursor: pointer;
+    filter: drop-shadow(0 15px 20px rgba(120,70,80,.18));
+    transition: transform .4s ease;
+}
+
+.envelope:hover {
+    transform: translateY(-8px) scale(1.03);
+}
+
+/* Envelope body */
+.envelope-body {
+    position: absolute;
+    inset: 0;
+    background: #f7c9d3;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+/* Envelope diagonal folds */
+.envelope-body::before,
+.envelope-body::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+}
+
+.envelope-body::before {
+    left: 0;
+    border-width: 0 0 185px 140px;
+    border-color: transparent transparent #efb4c1 transparent;
+}
+
+.envelope-body::after {
+    right: 0;
+    border-width: 185px 0 0 140px;
+    border-color: transparent transparent transparent #e9aab9;
+}
+
+/* Letter inside */
+.letter-preview {
+    position: absolute;
+    width: 235px;
+    height: 155px;
+    left: 22px;
+    bottom: 8px;
+    background: #fffdf8;
+    border-radius: 3px;
+    z-index: 2;
+    transition: transform 1s ease;
+    box-shadow: 0 5px 12px rgba(80,40,50,.12);
+}
+
+/* Envelope flap */
+.flap {
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 0;
+    top: 0;
+    z-index: 4;
+    border-left: 140px solid transparent;
+    border-right: 140px solid transparent;
+    border-top: 105px solid #f3bdc9;
+    transform-origin: top;
+    transition: transform .9s ease;
+}
+
+/* Heart seal */
+.seal {
+    position: absolute;
+    z-index: 6;
+    left: 50%;
+    top: 76px;
+    transform: translateX(-50%);
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #b85c70;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 21px;
+    box-shadow: 0 5px 12px rgba(100,40,50,.2);
+    transition: opacity .4s ease;
+}
+
+/* Opening animation */
+.envelope.open .flap {
+    transform: rotateX(180deg);
+    z-index: 1;
+}
+
+.envelope.open .seal {
+    opacity: 0;
+}
+
+.envelope.open .letter-preview {
+    transform: translateY(-95px);
+}
+
+.open-text {
+    margin-top: 45px;
+    font-family: "DM Serif Display", serif;
+    font-style: italic;
+    font-size: 19px;
+    color: #8c5964;
+}
+
+.click-hint {
+    margin-top: 8px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: #b7858f;
+}
+
+/* --------------------
+   LETTER
+-------------------- */
+
+.letter-section {
+    display: none;
+    padding: 100px 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.letter-section.show {
+    display: block;
+    animation: letterAppear 1.2s ease;
+}
+
+.letter-card {
+    width: min(850px, 94vw);
+    margin: auto;
+    background:
+        linear-gradient(rgba(255,255,255,.75), rgba(255,255,255,.75)),
+        #fffaf1;
+    border: 1px solid rgba(180,130,130,.18);
+    border-radius: 8px;
+    padding: clamp(35px, 7vw, 75px);
+    box-shadow:
+        0 25px 70px rgba(100,55,65,.14),
+        0 2px 5px rgba(100,55,65,.06);
+    position: relative;
+}
+
+/* Decorative corners */
+.letter-card::before,
+.letter-card::after {
+    content: "♡";
+    position: absolute;
+    font-size: 30px;
+    color: #d99aa8;
+}
+
+.letter-card::before {
+    top: 22px;
+    left: 25px;
+}
+
+.letter-card::after {
+    bottom: 22px;
+    right: 25px;
+}
+
+.letter-title {
+    text-align: center;
+    font-family: "Great Vibes", cursive;
+    font-size: clamp(40px, 7vw, 65px);
+    font-weight: 400;
+    color: #8e4d5d;
+    margin-bottom: 35px;
+}
+
+.letter {
+    font-size: 16px;
+    line-height: 1.9;
+    color: #60444b;
+}
+
+.letter p {
+    margin: 0 0 24px;
+}
+
+.signature {
+    text-align: center;
+    margin-top: 45px;
+    font-family: "Great Vibes", cursive;
+    font-size: 40px;
+    color: #9a5363;
+}
+
+/* --------------------
+   ANIMATIONS
+-------------------- */
+
+@keyframes fadeDown {
+    from {
+        opacity: 0;
+        transform: translateY(-25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes letterAppear {
+    from {
+        opacity: 0;
+        transform: translateY(60px) scale(.97);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* --------------------
+   MOBILE
+-------------------- */
+
+@media (max-width: 600px) {
+
+    .balloon {
+        transform: scale(.7);
+    }
+
+    .b1 {
+        left: -5%;
+    }
+
+    .b2 {
+        right: -5%;
+    }
+
+    .b3 {
+        left: 2%;
+    }
+
+    .b4 {
+        right: 2%;
+    }
+
+    .envelope {
+        width: 245px;
+        height: 165px;
+    }
+
+    .flap {
+        border-left-width: 122px;
+        border-right-width: 122px;
+        border-top-width: 95px;
+    }
+
+    .letter-preview {
+        width: 205px;
+        height: 140px;
+        left: 20px;
+    }
+
+    .letter {
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .letter-card {
+        padding: 38px 25px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Floating Hearts -->
+<div class="background-heart" style="left:10%;animation-delay:0s;">♡</div>
+<div class="background-heart" style="left:30%;animation-delay:3s;">♡</div>
+<div class="background-heart" style="left:55%;animation-delay:1s;">♡</div>
+<div class="background-heart" style="left:75%;animation-delay:5s;">♡</div>
+<div class="background-heart" style="left:90%;animation-delay:2s;">♡</div>
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="balloon b1"></div>
+    <div class="balloon b2"></div>
+    <div class="balloon b3"></div>
+    <div class="balloon b4"></div>
+
+    <div class="small-text">A little something for you</div>
+
+    <h1>Happy Birthday<br>Hiba</h1>
+
+    <div class="subtitle">
+        To my favourite person 🤍
+    </div>
+
+    <div class="envelope-area">
+
+        <div class="envelope" id="envelope" onclick="openLetter()">
+
+            <div class="letter-preview"></div>
+
+            <div class="envelope-body"></div>
+
+            <div class="flap"></div>
+
+            <div class="seal">♥</div>
+
+        </div>
+
+        <div class="open-text">
+            open your letter
+        </div>
+
+        <div class="click-hint">
+            click the envelope ♡
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- LETTER -->
+
+<section class="letter-section" id="letterSection">
+
+    <div class="letter-card">
+
+        <div class="letter-title">
+            For my darling Hiba ♡
+        </div>
+
+        <div class="letter">
+
+            <p>
+                <strong>Happy 17th birthday, my darling ❤️</strong>
+            </p>
+
+            <p>
+                I actually can’t believe you’re 17 already 😭. It feels so weird because we’ve only been friends for a little over a year, but honestly it feels like I’ve known you for so much longer. Somehow, in that one year, you’ve become such an important person to me and I’m genuinely so grateful that Allah brought you into my life.
+            </p>
+
+            <p>
+                You’re honestly such a sweet and adorable person. Like genuinely, you’re so cute without even trying 😭. I love when you start talking about something and get really into it, or when you just randomly say something and make me laugh. I could listen to you talk about the most random things and still enjoy it because it’s you. There’s just something about your personality that makes being around you feel so nice.
+            </p>
+
+            <p>
+                I also really love how you make me feel. I always feel so loved and comfortable with you, even when we’re literally doing nothing or just talking about random stuff. You have no idea how much the little things you do mean to me. All our stupid conversations, random jokes, laughing over things that probably aren’t even funny and just being there for each other are memories I really appreciate.
+            </p>
+
+            <p>
+                And honestly, I’m really proud of you too. I know things at home haven’t always been easy for you, and I know you’ve had to deal with a lot. But somehow you still keep going and you still manage to be such a kind and caring person. I really admire how strong you are, even if you don’t always realise it yourself. You’ve been through difficult things and you still have so much love in you, and that says a lot about the kind of person you are.
+            </p>
+
+            <p>
+                But please remember that you don’t always have to be strong. You’re allowed to have bad days, you’re allowed to get tired and you’re allowed to just not be okay sometimes. You don’t have to deal with everything by yourself. And whenever things feel too much, I hope you remember that Allah knows what you’re going through and He knows every little thing in your heart.
+            </p>
+
+            <p>
+                For your 17th birthday, I have so many duas for you. I pray Allah makes this year so much happier and easier for you. May He protect you from anything bad, give you peace in your heart and make every difficult situation easier. May He accept all your duas, even the ones you haven’t told anyone about, and give you what is best for you. May He bless you with happiness, success, good people around you and a beautiful future. Ameen 🤍
+            </p>
+
+            <p>
+                I hope 17 brings you so many good memories and so many reasons to smile. I hope you get to do things that make you genuinely happy and achieve everything you’re hoping for. And I hope you never lose the sweet and caring person you are because that’s one of the things I love most about you.
+            </p>
+
+            <p>
+                Thank you for being my best friend and for being such a special part of my life. Thank you for all the laughs, the conversations, the random moments and just for being you. I’m genuinely so lucky to have you, and I hope we get to celebrate so many more birthdays together InshaAllah.
+            </p>
+
+            <p>
+                I love you so much, my darling ❤️ I hope you have the best 17th birthday ever because you really deserve it. May Allah always protect you, keep you happy, give you strength and fill your life with so much barakah and happiness.
+            </p>
+
+            <p>
+                <strong>Happy birthday, my love 🥹❤️</strong>
+            </p>
+
+            <p>
+                Hope reading this made you smile :)
+            </p>
+
+            <div class="signature">
+                Always here for you ♡
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<script>
+
+function openLetter() {
+
+    const envelope = document.getElementById("envelope");
+    const letterSection = document.getElementById("letterSection");
+
+    if (envelope.classList.contains("open")) {
+        return;
+    }
+
+    envelope.classList.add("open");
+
+    setTimeout(() => {
+
+        letterSection.classList.add("show");
+
+        setTimeout(() => {
+            letterSection.scrollIntoView({
+                behavior: "smooth"
+            });
+        }, 300);
+
+    }, 900);
+
+}
+
+</script>
+
+</body>
+</html>
+```
